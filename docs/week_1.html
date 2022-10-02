@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python Introduction I - Programming Basics and Data Types" href="../notebooks/week_1_solutions.html" />
-    <link rel="prev" title="Run Jupyter Notebooks with Noto" href="noto_guide.html" />
+    <link rel="prev" title="Run Jupyter Notebooks with EPFL’s Noto" href="noto_guide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="noto_guide.html">
-   Run Jupyter Notebooks with Noto
+   Run Jupyter Notebooks with EPFL’s Noto
   </a>
  </li>
 </ul>
@@ -339,8 +339,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbers-in-python">
+   Numbers in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#strings">
    Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
   </a>
  </li>
 </ul>
@@ -368,8 +383,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbers-in-python">
+   Numbers in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#strings">
    Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
   </a>
  </li>
 </ul>
@@ -425,20 +455,77 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
+<p>For more details check out the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html">Python docs!</a></p>
+<p>Here, we briefly summarize Numbers, Strings, Lists and Dictionaries.</p>
+</section>
+<section id="numbers-in-python">
+<h2>Numbers in Python<a class="headerlink" href="#numbers-in-python" title="Permalink to this headline">#</a></h2>
+<p>Python’s core objects include integers, floating-point, complex numbers, etc.</p>
+<p>Types of numbers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> represents integers, e.g. <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">14213555</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> represents reals, e.g. <code class="docutils literal notranslate"><span class="pre">pi</span></code>, <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.000001</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complex</span></code> represents complex numbeers, e.g. real + imaginary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> represents Boolean values, <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type()</span></code> returns the type of Python objects</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>           <span class="c1"># again, ```&gt;&gt;&gt;```m denotes what you type in a Python shell</span>
+<span class="go">int                   # here is the output!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="go">float</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">bool</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>      <span class="c1"># define a complex number</span>
+<span class="go">(1+1j)                # evaluates to this!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>	  <span class="c1"># remember: sqrt(-1) = j</span>
+<span class="go">(-1,0j)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">complex</span>
+</pre></div>
+</div>
 </section>
 <section id="strings">
 <h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>strings are concatenations of letters, special characters, numbers, and spaces</p></li>
 <li><p>they are case sensitive!</p></li>
+<li><p>strings can be <em>defined</em> by enclosing in quotation marks (”) or single quotes (‘).</p></li>
 </ul>
-<p>They can be <em>defined</em> by enclosing in quotation marks (”) or single quotes (‘).</p>
 <p>Examples:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="s1">&#39;Geneva&#39;</span>      <span class="c1"># make a 6-character string and assign it to a name</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="s2">&quot;Lausanne&quot;</span>    <span class="c1"># make a 8-character string and assign it to a name</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>        <span class="c1"># cast integer 3 to string and assign to name</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
 <span class="go">str</span>
+</pre></div>
+</div>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>ordered sequences of objects</p></li>
+<li><p>accessible by index</p></li>
+<li><p>have no <em>fixed size</em> and are very flexible</p></li>
+<li><p>a list is denoted by <em>square brackets</em> []</p></li>
+</ul>
+<p>Three examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">list2</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;abc&#39;</span><span class="p">]</span>                               <span class="c1"># lists can have mixed types; here int + str</span>
+<span class="n">list3</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;EPFL&#39;</span><span class="p">,</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;in&#39;</span><span class="p">,[</span><span class="s1">&#39;Lausanne&#39;</span><span class="p">,</span><span class="s1">&#39;VD&#39;</span><span class="p">]]</span>    <span class="c1"># they support arbitrary nesting</span>
+</pre></div>
+</div>
+</section>
+<section id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h2>
+<p>Dictionaries are</p>
+<ul class="simple">
+<li><p>collections of key-value pairs that maps from keys to values.</p></li>
+<li><p>the keys can be any immutable type, and the values can be any type.</p></li>
+<li><p>like lists they can also be mixed and nested</p></li>
+<li><p>a dict is denoted by <em>curly brackets</em> {}</p></li>
+</ul>
+<p>An example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">inventory</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Apples&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;Pears&#39;</span><span class="p">:</span> <span class="mf">123.5</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -477,7 +564,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Run Jupyter Notebooks with Noto</p>
+            <p class="prev-next-title">Run Jupyter Notebooks with EPFL’s Noto</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../notebooks/week_1_solutions.html" title="next page">
